@@ -1,6 +1,5 @@
 const express=require('express')
 const createError = require('http-errors');
-const bodyParser=require('body-parser');
 const logger=require('morgan');
 const ejs = require('ejs'); 
 const app=express()
@@ -15,6 +14,10 @@ app.use(express.static('public'))
 
 app.get('/',(req,res)=>{
     res.render("main.html")
+})
+
+app.get('/start',(req,res)=>{
+    res.render("index.html")
 })
 
 app.use(function(req, res, next) {
