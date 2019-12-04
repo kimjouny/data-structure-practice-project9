@@ -1,0 +1,26 @@
+{
+  "name": "data-structure-practice-project9",
+  "version": "1.0.0",
+  "description": "자료구조실습 프로젝트 9조 repo 입니다",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start":"nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimjouny/data-structure-practice-project9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimjouny/data-structure-practice-project9/issues"
+  },
+  "homepage": "https://github.com/kimjouny/data-structure-practice-project9#readme"
+}
