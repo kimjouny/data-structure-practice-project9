@@ -11,7 +11,7 @@ app.engine('html',ejs.renderFile)
 app.use(logger('dev'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('/public'))
+app.use(express.static('public'))
 
 app.get('/',(req,res)=>{
     res.render("main.html")
