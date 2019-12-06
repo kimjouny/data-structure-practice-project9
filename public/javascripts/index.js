@@ -1,3 +1,5 @@
 import {$} from './utils.js'
 
-// $('.background-container')[0].play();
+$('.e')[0].addEventListener('click',(evt)=>{
+    console.log('hihixs')
+})
