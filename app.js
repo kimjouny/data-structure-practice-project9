@@ -13,11 +13,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'))
 
 app.get('/',(req,res)=>{
-    res.render("main.html")
+    res.render("index.html")
 })
 
 app.get('/start',(req,res)=>{
-    res.render("index.html")
+    res.render("main.html")
 })
 
 app.use(function(req, res, next) {
