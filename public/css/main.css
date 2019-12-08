@@ -115,7 +115,6 @@ html,body{
     flex:1;
     display: flex;
     max-width:100%;
-    background-color: skyblue;
     padding:5%;
     justify-content: space-between;
   }
@@ -128,18 +127,28 @@ html,body{
     padding:0;
     width:60%;
     max-height:100%;
-    background-color:white;
   }
   .card{
     width:22%;
     height:22%;
-    background-color: slateblue;
-    border-radius: 10%;
+    border-radius: 8%;
   }
 
+  .lock{
+    background-image: url(../images/lock.png);
+    background-color: gray;
+    background-size: 5rem;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+
+  .matched{
+    visibility: hidden;
+  }
   .stack-container{
     width:30%;
     max-height:100%;
     padding:0;
+    border-radius: 2%;
     background-color:silver;
   }
