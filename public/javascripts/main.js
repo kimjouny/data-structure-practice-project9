@@ -1,6 +1,6 @@
 import {getQueryString, $} from './utils.js'
 import {getAllCards} from './card.js'
-import {COLOR} from './const.js'
+
 // alert(decodeURI(getQueryString().name))
 
 const timeDisplay=$('.wave-text')[0];
@@ -11,8 +11,9 @@ let active=-1;
 const cards=getAllCards();
 const cardObjects=$('.card');
 const stack=$('.stack-container')[0];
+let calcStack=[];
 
-$('.card-container')[0].addEventListener('click',(e)=>{
+const clickHandler=(e)=>{
     if(e.target.classList[0]!=='card')return;
     switch(e.target.classList.length){
         case 1:{
@@ -66,11 +67,45 @@ $('.card-container')[0].addEventListener('click',(e)=>{
             break;
         }
     }
-});
+}
 
-tid=setInterval(()=>{
+$('.card-container')[0].addEventListener('click',clickHandler);
+
+
+
+const popStack= async()=>{
+    const stacks=$('.stack')
+    if(!stacks.length)return;
+    let idx=stacks.length-1;
+    let t;
+    t=await setInterval(()=>{
+        stacks[idx].style.backgroundColor="gray";
+        stacks[idx].style.color="#2dc14f";
+        stacks[idx].innerText=`+${+stacks[idx].value}`;
+        calcStack.push(parseInt(stacks[idx].value));
+        idx--;
+        if(idx<0){
+            clearInterval(t);
+            const summ=calcStack.reduce((acc,v)=>{
+                return acc+v;
+            },0)
+            console.log(summ)
+        }
+        
+    },1000)
+}
+
+tid=setInterval(async ()=>{
     +timeDisplay.innerText--;
     if(+timeDisplay.innerText<=0){
+        const container=$('.card-container')[0]
+        container.removeEventListener('click',clickHandler,false)
+        container.style.opacity="0.2"
         clearInterval(tid);
+        await popStack();
     }
 },1000)
+
+const showScore=()=>{
+    
+}
