@@ -70,7 +70,9 @@ const clickHandler=(e)=>{
 }
 
 $('.card-container')[0].addEventListener('click',clickHandler);
-
+$('.home-btn')[0].addEventListener('click',(e)=>{
+    window.location.href="/"
+})
 
 
 const popStack= async()=>{
@@ -89,7 +91,7 @@ const popStack= async()=>{
             const summ=calcStack.reduce((acc,v)=>{
                 return acc+v;
             },0)
-            console.log(summ)
+            showScore(summ);
         }
         
     },1000)
