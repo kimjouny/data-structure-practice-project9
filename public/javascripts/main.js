@@ -10,6 +10,7 @@ let active=-1;
 
 const cards=getAllCards();
 const cardObjects=$('.card');
+const stack=$('.stack-container')[0];
 
 $('.card-container')[0].addEventListener('click',(e)=>{
     if(e.target.classList[0]!=='card')return;
@@ -45,6 +46,11 @@ $('.card-container')[0].addEventListener('click',(e)=>{
                 e.target.style.backgroundPosition="50%"
                 cardObjects[active].classList.add('matched')
                 e.target.classList.add('matched')
+                stack.innerHTML+=`
+                    <li class="stack" value="${cards[active].score}" 
+                    style="background-color:${cards[active].color}">
+                        ${cards[active].name}
+                    </li>`
                 active=-1;
 
             }
