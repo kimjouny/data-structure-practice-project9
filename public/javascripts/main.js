@@ -77,7 +77,12 @@ $('.home-btn')[0].addEventListener('click',(e)=>{
 
 const popStack= async()=>{
     const stacks=$('.stack')
-    if(!stacks.length)return;
+    if(!stacks.length){
+        $('.score-section')[0].style.display="flex"
+        $('.score-text')[0].innerHTML=`${decodeURI(getQueryString().name)} 님의 점수는 0점입니다`
+
+        return;
+    }
     let idx=stacks.length-1;
     let t;
     t=await setInterval(()=>{
@@ -91,7 +96,8 @@ const popStack= async()=>{
             const summ=calcStack.reduce((acc,v)=>{
                 return acc+v;
             },0)
-            showScore(summ);
+            $('.score-section')[0].style.display="flex"
+            $('.score-text')[0].innerHTML=`${decodeURI(getQueryString().name)} 님의 점수는 ${summ}점입니다`
         }
         
     },1000)
@@ -107,7 +113,3 @@ tid=setInterval(async ()=>{
         await popStack();
     }
 },1000)
-
-const showScore=()=>{
-    
-}
