@@ -8,5 +8,7 @@ let tid;
 
 tid=setInterval(()=>{
     +timeDisplay.innerText--;
-    if(+timeDisplay.innerText<=0){clearInterval(tid);}
+    if(+timeDisplay.innerText<=0){
+        clearInterval(tid);
+    }
 },1000)
