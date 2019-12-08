@@ -3,7 +3,7 @@ import {CARD_NUM} from './const.js';
 const cards=[
     {
         name:"C",
-        color:"pink",
+        color:"skyblue",
         img:"../images/c.png",
         score:100
     },
@@ -12,6 +12,12 @@ const cards=[
         color:"orange",
         img:"../images/java.png",
         score:200
+    },
+    {
+        name:"C++",
+        color:"#e9e0d7",
+        img:"../images/cplpl.png",
+        score:150
     }
 ];
 
