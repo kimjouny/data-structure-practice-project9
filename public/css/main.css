@@ -121,6 +121,7 @@ html,body{
 
   .card-container{
     display: flex;
+    list-style: none;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -132,6 +133,7 @@ html,body{
     width:22%;
     height:22%;
     border-radius: 8%;
+    transition: opacity 0.5s;
   }
 
   .lock{
@@ -143,7 +145,7 @@ html,body{
   }
 
   .matched{
-    visibility: hidden;
+    opacity: 0.5;
   }
   .stack-container{
     width:30%;
