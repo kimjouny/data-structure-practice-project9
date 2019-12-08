@@ -1,5 +1,6 @@
 import {getQueryString, $} from './utils.js'
 import {getAllCards} from './card.js'
+import {COLOR} from './const.js'
 // alert(decodeURI(getQueryString().name))
 
 const timeDisplay=$('.wave-text')[0];
@@ -8,8 +9,6 @@ let tid;
 let active=-1;
 
 const cards=getAllCards();
-console.log(cards)
-
 const cardObjects=$('.card');
 
 $('.card-container')[0].addEventListener('click',(e)=>{
